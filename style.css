@@ -1,0 +1,52 @@
+body{
+    padding:0% 3% 10% 3%;
+    text-align:center;
+}
+h1{
+    color: #32a852;
+    margin-top:30px;
+}
+button{
+    cursor: pointer;
+    border: 1px solid #555;
+    text-align: center;
+    padding: 5px;
+    margin-left: 8px;
+}
+.dark{
+    background-color: #222;
+    color: #e6e6e6;
+}
+
+ul {
+	list-style-type: none;
+	padding-inline-start: 0;
+	margin: 1rem 0;
+  }
+  
+  li {
+	padding: 0.25rem;
+  }
+  li:nth-child(odd) {
+	background: #80808030;
+  }
+  li:nth-child(even) {
+	background: #ffffff;
+  }
+  
+  h3,
+  p {
+	margin: 0;
+  }
+
+
+#dark-mode-toggle-button {
+	position: fixed;
+	bottom: 0;
+	right: 0;
+  }
+
+  #show-symbols-toggle-button {
+	bottom: 50%;
+	right: 50%;
+  }
