@@ -3,12 +3,14 @@
       Do you think it's exaggerated? Yes, I see it too!
 # How to use
 This extension is not currently uploaded to the Chrome Web Store, so you have to enable developer mode to be able to use it.  
+```
 git clone https://github.com/MohamedNoordin/YT-Commentator-Name.git
+```
 Or, download a recent release of this repo and unzip it.
 - Open the extensions page from the Chrome toolbar, or simply, write chrome://extensions in the address bar of any tab.
 - Toggle the "Developer mode" button at top-right on.
 - Click on "Load unpacked"
-- Find your way to and select the cloned repo YT-Commentator-Name directory.
+- Find your way to and select the cloned repo YT-Commentator-Name directory.  
 Voilà! You now have the YT-Commentator-Name extension running up.  
 # Testing
 - Open up [YouTube](https://www.youtube.com)
