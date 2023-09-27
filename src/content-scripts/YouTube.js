@@ -6,7 +6,7 @@ class YouTubeObserver {
 		this.featuredHandledComments = [];
 	}
 
-	async observe() {
+	observe() {
 		// Create a new MutationObserver instance
 		// To be notified when a new comment has been added to the DOM
 		const observer = new MutationObserver((mutations, observer) => {
@@ -15,10 +15,8 @@ class YouTubeObserver {
 				const comments = addedNodes.filter(node => node.tagName === "YTD-COMMENT-RENDERER");
 				const featuredComments = Array.from(document.getElementsByTagName("YTD-AUTHOR-COMMENT-BADGE-RENDERER"));
 
-				await Promise.all([
-					this.observeForfeaturedComments(featuredComments),
-					this.observeForComments(comments)
-				]);
+				this.observeForfeaturedComments(featuredComments);
+				this.observeForComments(comments);
 			});
 		});
 
@@ -26,8 +24,8 @@ class YouTubeObserver {
 		const config = { childList: true, subtree: true };
 		observer.observe(document.body, config);
 	}
-
-	async observeForfeaturedComments(featuredComments) {
+		
+	observeForfeaturedComments(featuredComments) {
 		if (featuredComments.length > 0) {
 			featuredComments.forEach(async(comment) => {
 				const featuredCommentChannelAnchor = comment.querySelector("A");
@@ -72,7 +70,7 @@ class YouTubeObserver {
 		}
 	}
 
-	async observeForComments(comments) {
+	observeForComments(comments) {
 		if (comments.length > 0) {
 			comments.forEach(async(comment) => {
 				const commentRendererH3 = comment.querySelector("H3");
@@ -104,6 +102,4 @@ class YouTubeObserver {
 
 // YouTube content-script
 const observer = new YouTubeObserver();
-(async () => {
-	await observer.observe();
-})();
+observer.observe();
